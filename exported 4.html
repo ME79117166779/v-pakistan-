@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pakistan Culture</title>
+<meta name="description" content="Pakistan Culture — просветительский проект о культуре Пакистана: еда, крикет, музыка, урду, свадьбы, города. Без стереотипов. Bilingual RU/EN.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇵🇰</text></svg>">
+<style>
+  :root{
+    --green:#01411C;
+    --green-light:#0a6b30;
+    --green-dark:#01230f;
+    --gold:#c9a227;
+    --cream:#f7f4ec;
+    --white:#fff;
+    --ink:#1a1a1a;
+    --muted:#5c5c5c;
+    --radius:16px;
+    --shadow:0 4px 18px rgba(0,0,0,.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+    color:var(--ink);background:var(--cream);line-height:1.65;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+
+  /* HEADER */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(1,65,28,.97);backdrop-filter:blur(8px);color:#fff;
+  }
+  .nav{
+    max-width:1150px;margin:0 auto;display:flex;align-items:center;
+    justify-content:space-between;padding:12px 20px;gap:16px;
+  }
+  .logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:1.05rem;white-space:nowrap}
+  .logo .star{color:var(--gold);font-size:1.25rem}
+  .nav-links{display:flex;gap:20px;font-size:.92rem;flex-wrap:wrap}
+  .nav-links a{opacity:.9;transition:opacity .2s}
+  .nav-links a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+  .lang-switch{display:flex;gap:6px;background:rgba(255,255,255,.12);padding:4px;border-radius:999px}
+  .lang-switch button{
+    background:transparent;border:0;color:#fff;font-weight:700;font-size:.85rem;
+    padding:6px 12px;border-radius:999px;cursor:pointer;transition:background .2s;
+  }
+  .lang-switch button.active{background:var(--gold);color:#1a1a1a}
+  .burger{display:none;background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer}
+
+  /* HERO */
+  .hero{
+    background:radial-gradient(circle at 80% 20%,rgba(201,162,39,.25),transparent 45%),
+      linear-gradient(135deg,var(--green) 0%,#023a1a 60%,var(--green-dark) 100%);
+    color:#fff;padding:80px 20px 90px;text-align:center;position:relative;overflow:hidden;
+  }
+  .hero::after{content:"☪";position:absolute;right:-40px;bottom:-70px;font-size:300px;opacity:.06;line-height:1}
+  .hero h1{font-size:clamp(1.9rem,5vw,3.2rem);line-height:1.15;max-width:860px;margin:0 auto 18px;font-weight:800}
+  .hero h1 span{color:var(--gold)}
+  .hero p{max-width:680px;margin:0 auto 32px;font-size:clamp(1rem,2vw,1.15rem);opacity:.92}
+  .btn{
+    display:inline-block;padding:14px 30px;border-radius:999px;font-weight:700;
+    font-size:1rem;transition:transform .15s,box-shadow .15s,background .2s;cursor:pointer;border:0;
+  }
+  .btn-gold{background:var(--gold);color:#1a1a1a}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(201,162,39,.35)}
+  .btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6);margin-left:10px}
+  .btn-outline:hover{background:rgba(255,255,255,.12)}
+
+  /* SECTIONS */
+  section{padding:70px 20px}
+  .container{max-width:1150px;margin:0 auto}
+  .section-title{font-size:clamp(1.5rem,3.5vw,2.2rem);text-align:center;margin-bottom:12px;font-weight:800;color:var(--green)}
+  .section-sub{text-align:center;color:var(--muted);max-width:680px;margin:0 auto 46px;font-size:1rem}
+
+  /* CARDS */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+  .card{
+    background:var(--white);border-radius:var(--radius);padding:28px 24px;
+    box-shadow:var(--shadow);border-top:4px solid var(--green);
+    transition:transform .2s,box-shadow .2s;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.1)}
+  .card .icon{font-size:2rem;margin-bottom:12px}
+  .card h3{font-size:1.15rem;margin-bottom:8px;color:var(--green)}
+  .card p{color:var(--muted);font-size:.95rem}
+
+  /* FACTS */
+  .facts{background:var(--green);color:#fff}
+  .facts .section-title{color:#fff}
+  .facts .section-sub{color:rgba(255,255,255,.78)}
+  .fact{
+    background:rgba(255,255,255,.08);border-radius:var(--radius);padding:24px;
+    text-align:center;border:1px solid rgba(255,255,255,.12);
+  }
+  .fact .num{font-size:2.1rem;font-weight:800;color:var(--gold);line-height:1;margin-bottom:8px}
+  .fact p{font-size:.92rem;opacity:.9}
+
+  /* CULTURE BLOCKS */
+  .culture-block{
+    display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;
+    margin-bottom:56px;
+  }
+  .culture-block:nth-child(even) .culture-text{order:2}
+  .culture-text h3{font-size:1.5rem;color:var(--green);margin-bottom:14px}
+  .culture-text p{color:var(--muted);margin-bottom:12px}
+  .culture-text ul{margin-left:20px;color:var(--muted);font-size:.95rem}
+  .culture-text li{margin-bottom:6px}
+  .culture-visual{
+    background:linear-gradient(135deg,var(--green-light),var(--green));
+    border-radius:var(--radius);min-height:260px;display:flex;align-items:center;
+    justify-content:center;font-size:5rem;color:rgba(255,255,255,.9);
+    box-shadow:var(--shadow);
+  }
+
+  /* CITIES */
+  .city-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+  .city{
+    background:var(--white);border-radius:var(--radius);padding:24px;
+    box-shadow:var(--shadow);border-left:5px solid var(--gold);
+  }
+  .city h4{color:var(--green);margin-bottom:8px;font-size:1.1rem}
+  .city p{color:var(--muted);font-size:.93rem}
+
+  /* PHRASES */
+  .phrase-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  .phrase{
+    background:var(--white);border-radius:12px;padding:18px 20px;box-shadow:var(--shadow);
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+  }
+  .phrase .ru{font-weight:600}
+  .phrase .urdu{color:var(--green);font-weight:700;font-size:1.1rem}
+
+  /* FAQ */
+  .faq-item{
+    background:var(--white);border-radius:12px;margin-bottom:12px;
+    box-shadow:var(--shadow);overflow:hidden;
+  }
+  .faq-q{
+    padding:18px 22px;font-weight:700;cursor:pointer;display:flex;
+    justify-content:space-between;align-items:center;color:var(--green);
+  }
+  .faq-q::after{content:"+";font-size:1.4rem;color:var(--gold);transition:transform .2s}
+  .faq-item.open .faq-q::after{transform:rotate(45deg)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px;color:var(--muted)}
+  .faq-item.open .faq-a{max-height:300px;padding:0 22px 18px}
+
+  /* JOIN */
+  .join{background:linear-gradient(135deg,#fff 0%,var(--cream) 100%);text-align:center}
+  .join-box{
+    background:var(--white);max-width:760px;margin:0 auto;padding:48px 28px;
+    border-radius:24px;box-shadow:0 8px 32px rgba(1,65,28,.1);border:1px solid #e6e0d0;
+  }
+  .join-box h2{color:var(--green);font-size:1.6rem;margin-bottom:12px}
+  .join-box p{color:var(--muted);margin-bottom:0}
+
+  /* FOOTER */
+  footer{background:var(--green-dark);color:rgba(255,255,255,.72);text-align:center;padding:36px 20px;font-size:.9rem}
+  footer .star{color:var(--gold)}
+
+  /* LANGUAGE */
+  [data-lang]{display:none}
+  html[lang="ru"] [data-lang="ru"]{display:revert}
+  html[lang="en"] [data-lang="en"]{display:revert}
+  span[data-lang]{display:none}
+  html[lang="ru"] span[data-lang="ru"]{display:inline}
+  html[lang="en"] span[data-lang="en"]{display:inline}
+
+  /* MOBILE */
+  @media (max-width:820px){
+    .nav-links{
+      display:none;position:absolute;top:100%;left:0;right:0;background:var(--green);
+      flex-direction:column;padding:20px;gap:14px;
+    }
+    .nav-links.open{display:flex}
+    .burger{display:block}
+    .culture-block{grid-template-columns:1fr}
+    .culture-block:nth-child(even) .culture-text{order:0}
+    .btn-outline{margin-left:0;margin-top:10px}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <nav class="nav">
+    <a class="logo" href="#top"><span class="star">★</span> Pakistan Culture</a>
+    <button class="burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <div class="nav-links">
+      <a href="#about"><span data-lang="ru">О проекте</span><span data-lang="en">About</span></a>
+      <a href="#culture"><span data-lang="ru">Культура</span><span data-lang="en">Culture</span></a>
+      <a href="#cities"><span data-lang="ru">Города</span><span data-lang="en">Cities</span></a>
+      <a href="#language"><span data-lang="ru">Урду</span><span data-lang="en">Urdu</span></a>
+      <a href="#facts"><span data-lang="ru">Факты</span><span data-lang="en">Facts</span></a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="lang-switch">
+      <button id="btn-ru" class="active" onclick="setLang('ru')">RU</button>
+      <button id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <h1>
+    <span data-lang="ru">Пакистан — это не то, что ты <span style="color:var(--gold)">думаешь</span></span>
+    <span data-lang="en">Pakistan is not what you <span style="color:var(--gold)">think</span></span>
+  </h1>
+  <p>
+    <span data-lang="ru">Просветительский проект о культуре Пакистана: еда, крикет, музыка, урду, свадьбы и города. Без стереотипов и политики.</span>
+    <span data-lang="en">An educational project about Pakistani culture: food, cricket, music, Urdu, weddings and cities. No stereotypes, no politics.</span>
+  </p>
+  <a class="btn btn-gold" href="#culture"><span data-lang="ru">Узнать больше</span><span data-lang="en">Learn more</span></a>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title"><span data-lang="ru">О проекте</span><span data-lang="en">About the project</span></h2>
+    <p class="section-sub">
+      <span data-lang="ru">Pakistan Culture — это мост между русской молодёжью и культурой Пакистана. Мы рассказываем о стране, о которой все слышали, но мало кто знает. Фокус — культура, еда, спорт, музыка, язык и быт. Без политики и экзотизации.</span>
+      <span data-lang="en">Pakistan Culture is a bridge between Russian youth and Pakistani culture. We talk about a country everyone has heard of, but few really know. Focus: culture, food, sport, music, language and daily life. No politics, no exoticizing.</span>
+    </p>
+    <div class="grid">
+      <div class="card">
+        <div class="icon">🎯</div>
+        <h3><span data-lang="ru">Миссия</span><span data-lang="en">Mission</span></h3>
+        <p><span data-lang="ru">Разрушать стереотипы и показывать живую культуру Пакистана — через контент, встречи и совместные проекты.</span><span data-lang="en">Break stereotypes and show the living culture of Pakistan — through content, meetups and joint projects.</span></p>
+      </div>
+      <div class="card">
+        <div class="icon">🤝</div>
+        <h3><span data-lang="ru">Подход</span><span data-lang="en">Approach</span></h3>
+        <p><span data-lang="ru">Уважение к культуре, опора на пакистанских друзей и студентов, никакой политики и религии в фокусе.</span><span data-lang="en">Respect for culture, reliance on Pakistani friends and students, no politics or religion in focus.</span></p>
+      </div>
+      <div class="card">
+        <div class="icon">🌍</div>
+        <h3><span data-lang="ru">Аудитория</span><span data-lang="en">Audience</span></h3>
+        <p><span data-lang="ru">Русская молодёжь: студенты, геймеры, любители путешествий и Востока. А также пакистанцы в России.</span><span data-lang="en">Russian youth: students, gamers, travelers and fans of the East. Plus Pakistanis living in Russia.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CULTURE -->
+<section id="culture" style="background:#fff">
+  <div class="container">
+    <h2 class="section-title"><span data-lang="ru">Культура Пакистана</span><span data-lang="en">Pakistani culture</span></h2>
+    <p class="section-sub"><span data-lang="ru">Пять дверей в культуру — начни с того, что ближе.</span><span data-lang="en">Five doors into the culture — start with what feels closest.</span></p>
+
+    <div class="culture-block">
+      <div class="culture-text">
+        <h3>🍛 <span data-lang="ru">Еда</span><span data-lang="en">Food</span></h3>
+        <p><span data-lang="ru">Пакистанская кухня — пряная, сытная и очень домашняя. В основе — рис, пшеница, бобовые, мясо и специи.</span><span data-lang="en">Pakistani cuisine is spicy, hearty and very homely. It is built on rice, wheat, legumes, meat and spices.</span></p>
+        <ul>
+          <li><b>Бирияни</b> — <span data-lang="ru">ароматный рис с мясом и специями</span><span data-lang="en">fragrant rice with meat and spices</span></li>
+          <li><b>Чай масала</b> — <span data-lang="ru">чай с молоком и пряностями</span><span data-lang="en">tea with milk and spices</span></li>
+          <li><b>Самоса</b> — <span data-lang="ru">треугольные пирожки с начинкой</span><span data-lang="en">triangular stuffed pastries</span></li>
+          <li><b>Халва</b> — <span data-lang="ru">сладкая десертная паста</span><span data-lang="en">sweet dessert paste</span></li>
+        </ul>
+      </div>
+      <div class="culture-visual">🍛</div>
+    </div>
+
+    <div class="culture-block">
+      <div class="culture-text">
+        <h3>🏏 <span data-lang="ru">Крикет</span><span data-lang="en">Cricket</span></h3>
+        <p><span data-lang="ru">Крикет — главный культурный код Пакистана. В него играют во дворах, на улицах и стадионах. Победы сборной празднует вся страна.</span><span data-lang="en">Cricket is Pakistan's main cultural code. People play it in courtyards, streets and stadiums. National team victories are celebrated by the whole country.</span></p>
+        <ul>
+          <li><span data-lang="ru">Правила простые: мяч, бита, две команды</span><span data-lang="en">Simple rules: ball, bat, two teams</span></li>
+          <li><span data-lang="ru">Идеально для мини-турнира в вузе</span><span data-lang="en">Perfect for a mini-tournament at university</span></li>
+          <li><span data-lang="ru">Пакистан — одна из сильнейших сборных мира</span><span data-lang="en">Pakistan is one of the strongest national teams in the world</span></li>
+        </ul>
+      </div>
+      <div class="culture-visual">🏏</div>
+    </div>
+
+    <div class="culture-block">
+      <div class="culture-text">
+        <h3>🎵 <span data-lang="ru">Музыка</span><span data-lang="en">Music</span></h3>
+        <p><span data-lang="ru">От мистических ритмов каввали до современного попа. Музыка в Пакистане — это поэзия, эмоция и традиция.</span><span data-lang="en">From mystical qawwali rhythms to modern pop. Music in Pakistan is poetry, emotion and tradition.</span></p>
+        <ul>
+          <li><b>Каввали</b> — <span data-lang="ru">духовная музыка, известная на весь мир</span><span data-lang="en">devotional music known worldwide</span></li>
+          <li><b>Газели</b> — <span data-lang="ru">поэтические песни о любви</span><span data-lang="en">poetic songs about love</span></li>
+          <li><b>Нусрат Фатех Али Хан</b> — <span data-lang="ru">легенда каввали</span><span data-lang="en">a legend of qawwali</span></li>
+        </ul>
+      </div>
+      <div class="culture-visual">🎵</div>
+    </div>
+
+    <div class="culture-block">
+      <div class="culture-text">
+        <h3>🗣️ <span data-lang="ru">Урду</span><span data-lang="en">Urdu</span></h3>
+        <p><span data-lang="ru">Урду — язык поэзии и вежливости. Несколько фраз за 5 минут — и ты уже «свой» в разговоре с пакистанцем.</span><span data-lang="en">Urdu is the language of poetry and politeness. A few phrases in 5 minutes — and you are already "one of us" in a conversation with a Pakistani.</span></p>
+        <ul>
+          <li><span data-lang="ru">Государственный язык вместе с английским</span><span data-lang="en">Official language alongside English</span></li>
+          <li><span data-lang="ru">Пишется справа налево</span><span data-lang="en">Written right to left</span></li>
+          <li><span data-lang="ru">Близок к хинди в разговорной форме</span><span data-lang="en">Close to Hindi in spoken form</span></li>
+        </ul>
+      </div>
+      <div class="culture-visual">🗣️</div>
+    </div>
+
+    <div class="culture-block">
+      <div class="culture-text">
+        <h3>💍 <span data-lang="ru">Свадьбы</span><span data-lang="en">Weddings</span></h3>
+        <p><span data-lang="ru">Пакистанская свадьба — это несколько дней музыки, танцев и ярких нарядов. Один из самых зрелищных обрядов в мире.</span><span data-lang="en">A Pakistani wedding is several days of music, dance and bright outfits. One of the most spectacular ceremonies in the world.</span></p>
+        <ul>
+          <li><b>Менди</b> — <span data-lang="ru">вечер хны и узоров</span><span data-lang="en">henna and patterns evening</span></li>
+          <li><b>Барат</b> — <span data-lang="ru">процессия жениха</span><span data-lang="en">groom's procession</span></li>
+          <li><b>Вальима</b> — <span data-lang="ru">свадебный пир</span><span data-lang="en">wedding feast</span></li>
+        </ul>
+      </div>
+      <div class="culture-visual">💍</div>
+    </div>
+  </div>
+</section>
+
+<!-- FACTS -->
+<section class="facts" id="facts">
+  <div class="container">
+    <h2 class="section-title"><span data-lang="ru">Факты, которые удивляют</span><span data-lang="en">Facts that surprise</span></h2>
+    <p class="section-sub"><span data-lang="ru">Коротко о том, что стоит знать до первого разговора.</span><span data-lang="en">A quick brief before your first conversation.</span></p>
+    <div class="grid">
+      <div class="fact"><div class="num">240M+</div><p><span data-lang="ru">население — 5-е место в мире</span><span data-lang="en">population — 5th in the world</span></p></div>
+      <div class="fact"><div class="num">60%</div><p><span data-lang="ru">молодёжь до 30 лет</span><span data-lang="en">youth under 30</span></p></div>
+      <div class="fact"><div class="num">#1</div><p><span data-lang="ru">по числу игроков в крикет</span><span data-lang="en">by number of cricket players</span></p></div>
+      <div class="fact"><div class="num">K2</div><p><span data-lang="ru">вторая по высоте гора планеты</span><span data-lang="en">second highest mountain on Earth</span></p></div>
+      <div class="fact"><div class="num">Урду</div><p><span data-lang="ru">и английский — государственные языки</span><span data-lang="en">and English are official languages</span></p></div>
+      <div class="fact"><div class="num">Фриланс</div><p><span data-lang="ru">топ-5 стран по числу фрилансеров</span><span data-lang="en">top-5 country by number of freelancers</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CITIES -->
+<section id="cities">
+  <div class="container">
+    <h2 class="section-title"><span data-lang="ru">Города Пакистана</span><span data-lang="en">Cities of Pakistan</span></h2>
+    <p class="section-sub"><span data-lang="ru">Каждый город — свой характер, своя история, свой вкус.</span><span data-lang="en">Each city has its own character, history and taste.</span></p>
+    <div class="city-grid">
+      <div class="city">
+        <h4>Karachi</h4>
+        <p><span data-lang="ru">Крупнейший город, экономическая столица, порт и родина уличной еды.</span><span data-lang="en">Largest city, economic capital, port and home of street food.</span></p>
+      </div>
+      <div class="city">
+        <h4>Lahore</h4>
+        <p><span data-lang="ru">Культурное сердце: музыка, поэзия, могольская архитектура и лучшая еда.</span><span data-lang="en">Cultural heart: music, poetry, Mughal architecture and the best food.</span></p>
+      </div>
+      <div class="city">
+        <h4>Islamabad</h4>
+        <p><span data-lang="ru">Столица, зелёный и спокойный город у подножия гор Маргалла.</span><span data-lang="en">The capital, a green and calm city at the foot of the Margalla Hills.</span></p>
+      </div>
+      <div class="city">
+        <h4>Peshawar</h4>
+        <p><span data-lang="ru">Древний город на Шёлковом пути, ворота в Центральную Азию.</span><span data-lang="en">Ancient city on the Silk Road, gateway to Central Asia.</span></p>
+      </div>
+      <div class="city">
+        <h4>Quetta</h4>
+        <p><span data-lang="ru">Город фруктов и гор, окружённый суровыми пейзажами Белуджистана.</span><span data-lang="en">City of fruits and mountains, surrounded by the harsh landscapes of Balochistan.</span></p>
+      </div>
+      <div class="city">
+        <h4>Multan</h4>
+        <p><span data-lang="ru">Город святынь и гончарного мастерства, один из древнейших в Азии.</span><span data-lang="en">City of shrines and pottery, one of the oldest in Asia.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LANGUAGE -->
+<section id="language" style="background:#fff">
+  <div class="container">
+    <h2 class="section-title"><span data-lang="ru">Урду за 5 минут</span><span data-lang="en">Urdu in 5 minutes</span></h2>
+    <p class="section-sub"><span data-lang="ru">Несколько фраз, которые растопят лёд в разговоре.</span><span data-lang="en">A few phrases that will break the ice.</span></p>
+    <div class="phrase-list">
+      <div class="phrase"><span class="ru"><span data-lang="ru">Привет</span><span data-lang="en">Hello</span></span><span class="urdu">السلام علیکم</span></div>
+      <div class="phrase"><span class="ru"><span data-lang="ru">Спасибо</span><span data-lang="en">Thank you</span></span><span class="urdu">شکریہ</span></div>
+      <div class="phrase"><span class="ru"><span data-lang="ru">Как дела?</span><span data-lang="en">How are you?</span></span><span class="urdu">آپ کیسے ہیں؟</span></div>
+      <div class="phrase"><span class="ru"><span data-lang="ru">Да</span><span data-lang="en">Yes</span></span><span class="urdu">جی ہاں</span></div>
+      <div class="phrase"><span class="ru"><span data-lang="ru">Нет</span><span data-lang="en">No</span></span><span class="urdu">نہیں</span></div>
+      <div class="phrase"><span class="ru"><span data-lang="ru">Очень вкусно</span><span data-lang="en">Very tasty</span></span><span class="urdu">بہت مزیدار</span></div>
+      <div class="phrase"><span class="ru"><span data-lang="ru">До свидания</span><span data-lang="en">Goodbye</span></span><span class="urdu">خدا حافظ</span></div>
+      <div class="phrase"><span class="ru"><span data-lang="ru">Добро пожаловать</span><span data-lang="en">Welcome</span></span><span class="urdu">خوش آمدید</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container" style="max-width:820px">
+    <h2 class="section-title"><span data-lang="ru">Частые вопросы</span><span data-lang="en">FAQ</span></h2>
+    <p class="section-sub"><span data-lang="ru">Коротко о том, что спрашивают чаще всего.</span><span data-lang="en">Quick answers to the most common questions.</span></p>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span data-lang="ru">Это политический проект?</span><span data-lang="en">Is this a political project?</span></div>
+      <div class="faq-a"><span data-lang="ru">Нет. Мы говорим только о культуре: еде, музыке, спорте, языке, быте. Политика и религия — вне фокуса.</span><span data-lang="en">No. We talk only about culture: food, music, sport, language, daily life. Politics and religion are out of focus.</span></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span data-lang="ru">Кто вы?</span><span data-lang="en">Who are you?</span></div>
+      <div class="faq-a"><span data-lang="ru">Энтузиасты, студенты и друзья из России и Пакистана, которые хотят показать культуру без стереотипов.</span><span data-lang="en">Enthusiasts, students and friends from Russia and Pakistan who want to show the culture without stereotypes.</span></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span data-lang="ru">Можно ли использовать материалы?</span><span data-lang="en">Can I use the materials?</span></div>
+      <div class="faq-a"><span data-lang="ru">Да, с указанием источника и без искажения смысла. Для коммерческого использования — напиши нам.</span><span data-lang="en">Yes, with attribution and without distorting the meaning. For commercial use, contact us.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section class="join" id="join">
+  <div class="container">
+    <div class="join-box">
+      <h2><span data-lang="ru">Узнавай Пакистан ближе</span><span data-lang="en">Get to know Pakistan better</span></h2>
+      <p><span data-lang="ru">Проект растёт: скоро здесь появятся рецепты, уроки урду и анонсы офлайн-встреч. Спасибо, что заглянул.</span><span data-lang="en">The project is growing: recipes, Urdu lessons and offline meetup announcements are coming soon. Thanks for stopping by.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="star">★</span>
+  <span data-lang="ru">Pakistan Culture — просветительский проект. Культура, еда, спорт, музыка. Без политики.</span>
+  <span data-lang="en">Pakistan Culture — an educational project. Culture, food, sport, music. No politics.</span>
+  <br><small>© <span id="year"></span> Pakistan Culture</small>
+</footer>
+
+<script>
+  // Языковой переключатель
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    document.getElementById('btn-ru').classList.toggle('active', lang==='ru');
+    document.getElementById('btn-en').classList.toggle('active', lang==='en');
+    try{ localStorage.setItem('lang', lang); }catch(e){}
+  }
+  // Восстановить язык
+  try{
+    const saved = localStorage.getItem('lang');
+    if(saved) setLang(saved);
+  }catch(e){}
+
+  // Закрыть мобильное меню после клика
+  document.querySelectorAll('.nav-links a').forEach(link=>{
+    link.addEventListener('click', ()=>document.querySelector('.nav-links').classList.remove('open'));
+  });
+
+  // Год в футере
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
